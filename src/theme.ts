@@ -21,12 +21,32 @@ export const myTheme = createMuiTheme({
       fontWeight: 900,
       fontSize: '8em',
     },
+    h2: {
+      color: textColor,
+      fontFamily: Raleway,
+      fontWeight: 900,
+      fontSize: '5.25em',
+    },
+    subtitle1: {
+      color: textColorLight,
+      fontFamily: Raleway,
+      fontWeight: 400,
+      fontSize: '3.5em',
+    },
+    body1: {
+      color: textColor,
+      fontWeight: 400,
+      fontSize: '1.25em',
+    },
     button: {
       fontFamily: Raleway,
       fontWeight: 500,
-      fontSize: '1.25em',
+      fontSize: '1.5em',
     }
   },
+  shadows: ['none', '0 4px 15px 0 rgba(0, 0, 0, 0.15)', '2px 2px 12px 0 rgba(0, 0, 0, 0.2)'].concat(
+    Array(22).fill('0 5px 20px 0 rgba(0, 0, 0, 0.15)'),
+  ) as any,
   overrides: {
     MuiAppBar:{
       colorPrimary: {
@@ -35,14 +55,12 @@ export const myTheme = createMuiTheme({
       }
     },
     MuiToolbar: {
-      /* Styles applied to the root element if `disableGutters={false}`. */
       gutters: {
         paddingLeft: MuiTheme.spacing(2),
         paddingRight: MuiTheme.spacing(2),
         [MuiTheme.breakpoints.up('sm')]: {
-          paddingTop: MuiTheme.spacing(6),
-          paddingLeft: MuiTheme.spacing(18),
-          paddingRight: MuiTheme.spacing(18),
+          paddingLeft: '10vw',
+          paddingRight: '10vw',
         },
       },
       /* Styles applied to the root element if `variant="regular"`. */
@@ -51,7 +69,12 @@ export const myTheme = createMuiTheme({
       dense: {
         minHeight: 48,
       },
-    }
+    },
+    MuiButton: {
+      text: {
+        padding: MuiTheme.spacing(1, 1.5)
+      }
+    },
   }
 })
 
