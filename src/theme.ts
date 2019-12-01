@@ -4,37 +4,49 @@ import { createMuiTheme } from '@material-ui/core/styles'
 const MuiTheme = createMuiTheme()
 
 //colors
-export const textColor = '#4F4F4F'
-export const textColorLight = '#828282'
-export const textColor30 = '#C7C7C7'
+export const colors = {
+  text: '#4F4F4F',
+  textLight: '#828282',
+  text30: '#C7C7C7',
+  white90: 'rgba(255, 255, 255, 0.9)',
+  white95: 'rgba(255, 255, 255, 0.95)',
+}
 
 //font families
 const Ubuntu = '"Ubuntu", sans-serif'
 const Raleway = '"Raleway", sans-serif'
 
+//style variables
+export const styleVars = {
+  navBar: '12vw',
+  imgContainer: '48vw',
+  contentContainer: '36vw',
+}
+
+//Mui Theme overrides
 export const myTheme = createMuiTheme({
   typography: {
     fontFamily: Ubuntu,
     h1: {
-      color: textColor30,
+      color: colors.text30,
       fontFamily: Raleway,
       fontWeight: 900,
       fontSize: '8em',
     },
     h2: {
-      color: textColor,
+      color: colors.text,
       fontFamily: Raleway,
       fontWeight: 900,
       fontSize: '5.25em',
     },
     subtitle1: {
-      color: textColorLight,
+      color: colors.textLight,
       fontFamily: Raleway,
       fontWeight: 400,
-      fontSize: '3.5em',
+      fontSize: '3.25em',
     },
     body1: {
-      color: textColor,
+      color: colors.text,
       fontWeight: 400,
       fontSize: '1.25em',
     },
@@ -71,6 +83,9 @@ export const myTheme = createMuiTheme({
       },
     },
     MuiButton: {
+      root:{
+        color: colors.text30,
+      },
       text: {
         padding: MuiTheme.spacing(1, 1.5)
       }

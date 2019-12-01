@@ -1,52 +1,38 @@
-import React, { useState, useMemo } from 'react'
-import classnames from 'classnames'
+import React from 'react'
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
-import { Grid, AppBar, Toolbar, Button, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import Image from 'material-ui-image'
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import longboardImg from './imgs/longboard.png'
-import { myTheme, textColor, textColor30 } from './theme'
+import { FlagSpinner } from 'react-spinners-kit' 
+import NavBar from './components/NavBar'
+import BgImage from './components/BgImage'
+import TextContainer from './components/TextContainer'
 
-const useStyles = makeStyles(theme => {
-  console.log(theme.shadows)
-  return ({
+import { myTheme, colors, styleVars } from './theme'
+import longboardImg from './imgs/longboard.png'
+import laptopImg from './imgs/laptop.png'
+import designImg from './imgs/design.png'
+
+const useStyles = makeStyles(theme => ({
+  loading: {
+    position: 'absolute',
+    backgroundColor: 'white',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '100%',
+    transition: '0.6s',
+    opacity: (loading: any) => loading || 0,
+    zIndex: (loading: any) => loading ? 9999 : -9999,
+  },
   root: {
     fontSize: '0.75rem',
   },
   body: {
-    height: '200vh',
     margin: 'auto',
-    paddingTop: '14vw',
-  },
-  navBar: {
-    height: '14vw',
-    transition: '0.4s',
-  },
-  navBarOpaque: {
-    backgroundColor: 'white',
-    boxShadow: myTheme.shadows[1],
-    height: '6vw',
-  },
-  navTitle: {
-    flexGrow: 1,
-  },
-  navBtnSelected: {
-    color: textColor,
-    fontWeight: 700,
-  },
-  navBtn: {
-    color: textColor30,
-  },
-  landingImgContainer: {
-    position: 'absolute',
-    left: '7vw',
-    top: 0,
-    height: '55vw',
-    width: '43vw',
-    zIndex: -5,
+    paddingTop: styleVars.navBar,
   },
   contentContainer: {
-    height: '41vw',
+    height: styleVars.contentContainer,
   },
   textContainer: {
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
@@ -56,89 +42,47 @@ const useStyles = makeStyles(theme => {
   subtitle: {
     marginTop: '-0.35em',
   },
-})})
+}))
 
 const App = () => {
-  const classes = useStyles()
-  const [navBarOpaque, setNavBarOpaque] = useState(false)
+  const [loading, setLoading] = React.useState(true)
+  const classes = useStyles(loading)
+  setTimeout(() => setLoading(false), 3000)
 
-  useScrollPosition(
-    ({ currPos }) => {
-      console.log('ran scrollpos', currPos.y)
-      const isTop = currPos.y > -120
-      if (isTop)
-        setNavBarOpaque(false)
-      else
-        setNavBarOpaque(true)
-    },
-    [navBarOpaque],
-    undefined,
-    false,
-    300
-  )
-
-  return useMemo(
-    () => (
-      <ThemeProvider theme={myTheme}>
-        <Grid className={classes.root} container>
-          <AppBar>
-            <Toolbar className={classnames(classes.navBar, {[classes.navBarOpaque]: navBarOpaque})}>
-              <Grid container direction="row" alignItems="center">
-                <Grid className={classes.navTitle} item>
-                  {
-                    navBarOpaque ||
-                    <Typography variant="h1" style={{color: 'white'}}>
-                      HOME
-                    </Typography>
-                  }
-                </Grid>
-                <Grid item>
-                  <Button className={classes.navBtnSelected}> HOME </Button> 
-                </Grid>
-                <Grid item>
-                  <Button className={classes.navBtn}>
-                    PROJECTS
-                  </Button> 
-                </Grid>
-                <Grid item>
-                  <Button className={classes.navBtn}>
-                    EXPERIENCE
-                  </Button> 
-                </Grid>
-                <Grid item>
-                  <Button className={classes.navBtn}>
-                    CONTACT
-                  </Button> 
-                </Grid>
-              </Grid>
-            </Toolbar>
-          </AppBar>
-          <Grid className={classes.body} container item xs={9}>
-            <div className={classes.landingImgContainer}>
-              <Image
-                style={{height: 'inherit', paddingTop: 0}}
-                imageStyle={{objectFit: 'cover', objectPosition: '30% 50%'}}
-                src={longboardImg}
-              />
-            </div>
-            <Grid className={classes.contentContainer} container item justify="center" alignContent="center">
-              <Grid className={classes.textContainer} item>
-                <Typography variant="h2">
-                  TL;DR
-                </Typography>
-                <Typography className={classes.subtitle} variant="subtitle1">
-                  In case you're in a hurry
-                </Typography>
-                <Typography variant="body1">
-                  I’m a self-taught <b>UI/UX Designer</b> & Front-End Developer. Curiosity has driven me become a jack-of-all traits with experience as a Product Manager, Product Designer,  Music Instructor, Lifeguard, and Sub-Par Longboarder.
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
+  return (
+    <ThemeProvider theme={myTheme}>
+      <Grid className={classes.loading} container justify="center" alignItems="center">
+        <FlagSpinner size={80} color={colors.text30} />
+      </Grid>
+      <Grid className={classes.root} container>
+        <NavBar />
+        <Grid className={classes.body} container item xs={9}>
+          <BgImage src={longboardImg} isLanding imgPositioning="40% 50%"/>
+          <TextContainer
+            title="TL;DR"
+            subTitle="In case you're in a hurry"
+          >
+            I’m a self-taught <b>UI/UX Designer</b> & <b>Front-End Developer</b>. Curiosity has driven me become a jack-of-all traits with experience as a <b>Product Manager</b>, <b>Product Designer</b>, <b>Music Instructor</b>, <b>Lifeguard</b>, and <b>Sub-Par Longboarder</b>.
+          </TextContainer>
+          <TextContainer
+            title="Front-end Dev"
+            subTitle="Responsive & Clean Designs"
+            right
+            bgImg={<BgImage src={laptopImg} right imgPositioning="5% 20%"/>}
+          >
+            Just like traversing a Mobius strip, there's no end in sight when learning new front end technologies! I started with the fundamentals and will continue to keep up with the industry standards
+          </TextContainer>
+          <TextContainer
+            title="UI&UX Design"
+            subTitle="Functional & Aesthetic Graphics"
+            bgImg={<BgImage src={designImg} imgPositioning="15% 50%"/>}
+          >
+            Just like traversing a Mobius strip, there's no end in sight when learning new front end technologies! I started with the fundamentals and will continue to keep up with the industry standards
+          </TextContainer>
         </Grid>
-      </ThemeProvider>
-    ),
-    [navBarOpaque]
+      </Grid>
+      
+    </ThemeProvider>
   )
 }
 
