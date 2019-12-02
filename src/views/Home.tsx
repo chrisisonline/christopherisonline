@@ -9,6 +9,7 @@ import TextContainer, { StatContainer } from '../components/TextContainer'
 import longboardImg from '../imgs/longboard.png'
 import laptopImg from '../imgs/laptop.png'
 import designImg from '../imgs/design.png'
+import SkillTags from '../components/SkillTags'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,6 +48,10 @@ const Home = () => {
         bgImg={<BgImage src={laptopImg} right imgPositioning="5% 20%"/>}
       >
         Just like traversing a Mobius strip, there's no end in sight when learning new front end technologies! I started with the fundamentals and will continue to keep up with the industry standards
+        <SkillTags labels={[
+          'HTML5','CSS3','JavaScript','React.js','Redux','Node.js',
+          'Git','Yarn','MaterialUI','Grunt','Gulp','Webpack','Docker',
+        ]} right/>
       </TextContainer>
       <TextContainer
         title="UI&UX Design"
@@ -54,6 +59,10 @@ const Home = () => {
         bgImg={<BgImage src={designImg} imgPositioning="15% 50%"/>}
       >
         Just like traversing a Mobius strip, there's no end in sight when learning new front end technologies! I started with the fundamentals and will continue to keep up with the industry standards
+        <SkillTags labels={[
+          'Figma','Sketch','Illustrator','InDesign','InVision',
+          'Photoshop','Adobe XD','MS Paint'
+        ]}/>
       </TextContainer>
       <StatContainer
         title="Chris's Overview"

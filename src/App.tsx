@@ -36,12 +36,12 @@ export const routes = [
 
 const useStyles = makeStyles(theme => ({
   loading: {
-    position: 'absolute',
+    position: 'fixed',
     backgroundColor: 'white',
     top: 0,
     left: 0,
     right: 0,
-    height: '100%',
+    height: '100vh',
     transition: '0.6s',
     opacity: (loading: any) => loading || 0,
     zIndex: (loading: any) => loading ? 9999 : -9999,

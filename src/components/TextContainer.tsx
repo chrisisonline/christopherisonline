@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   textContainer: {
     backgroundColor: colors.white95,
     textAlign: (right: any) => right && 'right',
-    padding: theme.spacing(9), 
+    padding: theme.spacing(9, 12), 
     width: '75%',
   } as any,
   subtitle: {

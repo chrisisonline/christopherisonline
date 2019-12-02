@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: overlay;
+  scrollbar-width: 0;
 }
 
 a {
@@ -17,7 +17,9 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  position: fixed;
+  padding-left: 8px;
+  width: 0;
 }
 
 /* Track */
