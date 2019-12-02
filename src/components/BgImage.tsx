@@ -8,19 +8,19 @@ const useStyles = makeStyles(theme => ({
   root: {
     position: 'absolute',
     top: 0,
-    width: '43.75vw',
+    width: '44vw',
     zIndex: -5,
   },
   landing: {
-    left: '6.25vw',
+    left: '6vw',
     height: styleVars.imgContainer,
   },
   left: {
-    left: '-6.25vw',
+    left: '-6.5vw',
     height: '100%',
   },
   right: {
-    right: '-6.25vw',
+    right: '-6.5vw',
     height: '100%',
   }
 }))

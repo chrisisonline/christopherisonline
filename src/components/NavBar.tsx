@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import { Link, useLocation } from "react-router-dom"
 import classnames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, AppBar, Toolbar, Button, Typography } from '@material-ui/core'
@@ -19,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   navBtn: {
-    marginTop: (navBarOpaque: any) => navBarOpaque ? 0 : -theme.spacing(3),
+    marginTop: (navBarOpaque: any) => navBarOpaque ? 0 : -theme.spacing(3) as any,
   },
   navBtnSelected: {
     color: colors.text,
@@ -28,60 +29,74 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const NavBar = () => {
-  const [navBarOpaque, setNavBarOpaque] = useState(false)
-  const classes = useStyles(navBarOpaque)
+  const currPath = useLocation().pathname
 
+  const [navBarOpaque, setNavBarOpaque] = useState(false)
+  const [pageUrl, setPageUrl] = useState(currPath)
+  const classes = useStyles(navBarOpaque)
+  // console.log(pageUrl)
+  if (currPath !== pageUrl) setPageUrl(currPath)
+
+  const returnNavTitle = () => {
+    if (pageUrl === '/')
+      return 'HOME'
+    else
+      return pageUrl.substr(1).toUpperCase()
+  }
+  
   useScrollPosition(
     ({ currPos }) => {
-      console.log('ran scrollpos', currPos.y)
-      const isTop = currPos.y > -100
-      if (isTop)
+      if (currPos.y > -100) {
         setNavBarOpaque(false)
-      else
+      } else {
         setNavBarOpaque(true)
+      }
     },
     [navBarOpaque],
     undefined,
-    false,
+    undefined,
     300
   )
 
-  return useMemo(
-    () => (
-      <AppBar>
-        <Toolbar className={classnames(classes.root, {[classes.navBarOpaque]: navBarOpaque})}>
-          <Grid container direction="row" alignItems="center" spacing={2}>
-            <Grid className={classes.navTitle} item>
-              {
-                navBarOpaque ||
-                <Typography variant="h1" style={{color: 'white'}}>
-                  HOME
-                </Typography>
-              }
-            </Grid>
-            <Grid item>
-              <Button className={classnames(classes.navBtn, classes.navBtnSelected)}> HOME </Button> 
-            </Grid>
-            <Grid item>
-              <Button className={classes.navBtn}>
-                PROJECTS
-              </Button> 
-            </Grid>
-            <Grid item>
-              <Button className={classes.navBtn}>
-                EXPERIENCE
-              </Button> 
-            </Grid>
-            <Grid item>
-              <Button className={classes.navBtn}>
-                CONTACT
-              </Button> 
-            </Grid>
+  const navLinks = [
+    '/',
+    '/projects',
+    '/experience',
+    '/contact',
+  ]
+
+  return (
+    <AppBar>
+      <Toolbar className={classnames(classes.root, {[classes.navBarOpaque]: navBarOpaque})}>
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid className={classes.navTitle} item>
+            {
+              navBarOpaque ||
+              <Typography variant="h1" style={{color: 'white'}}>
+                { returnNavTitle() }
+              </Typography>
+            }
           </Grid>
-        </Toolbar>
-      </AppBar>
-    ),
-    [navBarOpaque]
+          {
+            navLinks.map((navLink, index) => (
+              <Grid item key={`${navLink.substr(1)}-${index}`}>
+                <Button
+                  onClick={() => setPageUrl(navLink)}
+                  className={classnames(
+                    classes.navBtn,
+                    {[classes.navBtnSelected]: pageUrl === navLink}
+                  )}
+                >
+                  <Link to={navLink}>
+                    {navLink === '/' ? 'HOME' : navLink.substr(1).toUpperCase()}
+                  </Link>
+                </Button>
+              </Grid>
+            ))
+          }
+        </Grid>
+      </Toolbar>
+    </AppBar>
   )
 }
 

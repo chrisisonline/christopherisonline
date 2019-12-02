@@ -8,6 +8,7 @@ export const colors = {
   text: '#4F4F4F',
   textLight: '#828282',
   text30: '#C7C7C7',
+  text15: '#E5E5E5',
   white90: 'rgba(255, 255, 255, 0.9)',
   white95: 'rgba(255, 255, 255, 0.95)',
 }
