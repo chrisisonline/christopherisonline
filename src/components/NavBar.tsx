@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation } from "react-router-dom"
 import classnames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
   },
   navTitle: {
     flexGrow: 1,
+  },
+  whiteTitle: {
+    color: 'white',
   },
   navBtn: {
     marginTop: (navBarOpaque: any) => navBarOpaque ? 0 : -theme.spacing(3) as any,
@@ -72,7 +75,7 @@ const NavBar = () => {
           <Grid className={classes.navTitle} item>
             {
               navBarOpaque ||
-              <Typography variant="h1" style={{color: 'white'}}>
+              <Typography className={ returnNavTitle() === 'HOME' ? classes.whiteTitle : undefined} variant="h1">
                 { returnNavTitle() }
               </Typography>
             }

@@ -26,6 +26,15 @@ export const styleVars = {
 
 //Mui Theme overrides
 export const myTheme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1600,
+      xl: 1920,
+    },
+  },
   typography: {
     fontFamily: Ubuntu,
     h1: {
@@ -49,7 +58,7 @@ export const myTheme = createMuiTheme({
     body1: {
       color: colors.text,
       fontWeight: 400,
-      fontSize: '1.25em',
+      fontSize: '1.2em',
     },
     button: {
       fontFamily: Raleway,
@@ -61,7 +70,7 @@ export const myTheme = createMuiTheme({
     Array(22).fill('0 5px 20px 0 rgba(0, 0, 0, 0.15)'),
   ) as any,
   overrides: {
-    MuiAppBar:{
+    MuiAppBar: {
       colorPrimary: {
         backgroundColor: 'transparent',
         boxShadow: 'none',
@@ -84,11 +93,20 @@ export const myTheme = createMuiTheme({
       },
     },
     MuiButton: {
-      root:{
+      root: {
         color: colors.text30,
       },
       text: {
         padding: MuiTheme.spacing(1, 1.5)
+      }
+    },
+    MuiChip: {
+      root: {
+        backgroundColor: colors.text,
+        borderRadius: 8,
+        color: 'white',
+        fontSize: '1em',
+        height: 30,
       }
     },
   }

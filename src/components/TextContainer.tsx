@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     width: '75%',
   } as any,
   subtitle: {
-    marginTop: '-0.35em',
+    marginTop: -theme.spacing(1),
   },
   statRoot: {
     padding: theme.spacing(18, 0, 24),
@@ -108,9 +108,7 @@ const TextContainer = ({
         <Typography className={classes.subtitle} variant="subtitle1">
           { subTitle }
         </Typography>
-        <Typography variant="body1">
-          { children }
-        </Typography>
+        { children }
       </Grid>
     </Grid>
   )

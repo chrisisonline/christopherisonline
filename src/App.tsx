@@ -12,6 +12,7 @@ import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { myTheme, colors, styleVars } from './theme'
 import NavBar from './components/NavBar'
 import Home from './views/Home'
+import Projects from './views/Projects'
 
 //site routing
 export const routes = [
@@ -22,7 +23,7 @@ export const routes = [
   },
   {
     path: "/projects",
-    render: () => <h2>Projects</h2>
+    render: () => <Projects />
   },
   {
     path: "/experience",
@@ -69,7 +70,7 @@ const useStyles = makeStyles(theme => ({
 const App = () => {
   const [loading, setLoading] = React.useState(true)
   const classes = useStyles(loading)
-  setTimeout(() => setLoading(false), 2000)
+  setTimeout(() => setLoading(false), 100)
   
   useEffect(() => {
     if (loading)

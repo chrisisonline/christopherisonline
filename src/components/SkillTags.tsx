@@ -7,13 +7,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     float: (right: boolean) => right && 'right',
     paddingTop: theme.spacing(2),
-    width: '80%',
+    // width: '66%',
   } as any,
-  tag: {
-    color: 'white',
-    backgroundColor: colors.text,
-    borderRadius: 8,
-  },
 }))
 
 const SkillTags = ({
@@ -36,7 +31,7 @@ const SkillTags = ({
       {
         labels.map((label, index) => (
           <Grid item key={`${label}-${index}`}>
-            <Chip className={classes.tag} label={label}/>
+            <Chip label={label}/>
           </Grid>
         ))
       }

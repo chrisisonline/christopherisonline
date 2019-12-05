@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Grid } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 //components & theme
 import { styleVars } from '../theme'
 import BgImage from '../components/BgImage'
@@ -39,7 +39,9 @@ const Home = () => {
         title="TL;DR"
         subTitle="In case you're in a hurry"
       >
-        I’m a self-taught <b>UI/UX Designer</b> & <b>Front-End Developer</b>. Curiosity has driven me become a jack-of-all traits with experience as a <b>Product Manager</b>, <b>Product Designer</b>, <b>Music Instructor</b>, <b>Lifeguard</b>, and <b>Sub-Par Longboarder</b>.
+        <Typography variant="body1">
+          I’m a self-taught <b>UI/UX Designer</b> & <b>Front-End Developer</b>. Curiosity has driven me become a jack-of-all traits with experience as a <b>Product Manager</b>, <b>Product Designer</b>, <b>Music Instructor</b>, <b>Lifeguard</b>, and <b>Sub-Par Longboarder</b>.
+        </Typography>
       </TextContainer>
       <TextContainer
         title="Front-end Dev"
@@ -47,7 +49,9 @@ const Home = () => {
         right
         bgImg={<BgImage src={laptopImg} right imgPositioning="5% 20%"/>}
       >
-        Just like traversing a Mobius strip, there's no end in sight when learning new front end technologies! I started with the fundamentals and will continue to keep up with the industry standards
+        <Typography variant="body1">
+          I've had experience working with various team settings both big and small. I've delivered projects at many different levels and have always adapted to changing technologies.
+        </Typography>
         <SkillTags labels={[
           'HTML5','CSS3','JavaScript','React.js','Redux','Node.js',
           'Git','Yarn','MaterialUI','Grunt','Gulp','Webpack','Docker',
@@ -58,7 +62,9 @@ const Home = () => {
         subTitle="Functional & Aesthetic Graphics"
         bgImg={<BgImage src={designImg} imgPositioning="15% 50%"/>}
       >
-        Just like traversing a Mobius strip, there's no end in sight when learning new front end technologies! I started with the fundamentals and will continue to keep up with the industry standards
+        <Typography variant="body1">
+          I've had experience working with various team settings both big and small. I've delivered projects at many different levels and have always adapted to changing technologies.
+        </Typography>
         <SkillTags labels={[
           'Figma','Sketch','Illustrator','InDesign','InVision',
           'Photoshop','Adobe XD','MS Paint'
