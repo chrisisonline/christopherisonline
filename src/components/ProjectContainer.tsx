@@ -3,12 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Typography } from '@material-ui/core'
 import Image from 'material-ui-image'
 //components & theme
-import { styleVars, colors } from '../theme'
+import { IColor, colors } from '../theme'
 import SkillTags from './SkillTags'
-import BgImage from '../components/BgImage'
-import TextContainer, { StatContainer } from '../components/TextContainer'
-//img assets
-import pokemonImg from '../imgs/pokemon.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,60 +17,106 @@ const useStyles = makeStyles(theme => ({
   imgContainer: {
     position: 'relative',
   },
-  bgBox: {
-    backgroundColor: colors.text,
+  bgBox: (props: any) => ({
+    backgroundColor: props.color.primary,
     position: 'absolute',
     top: 16,
-    left: 16,
-    right: 32,
+    left: props.right ? 32 : 16,
+    right: props.right ? 16 : 32,
     bottom: 16,
-  },
-  textContainer: {
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(9),
+  }) as any,
+  textContainer: (props: any) => (
+    props.right ? {
+      textAlign: 'right',
+      paddingLeft: theme.spacing(9),
+      paddingRight: theme.spacing(3),
+    } : {
+      paddingLeft: theme.spacing(3),
+      paddingRight: theme.spacing(9),
+    }) as any,
+  title: {
+    color: (props: any) => props.color.primary as any,
   },
   subtitle: {
+    color: (props: any) => props.color.secondary as any,
     marginTop: -theme.spacing(1),
   },
 }))
-const imgStyles = {
+const imgStyles = (right? : boolean) => ({
   position: 'absolute',
   top: -16,
-  left: -16,
-  right: 0,
+  left: right ? 0 : -16,
+  right: right ? -16 : 0,
   bottom: -16,
   paddingTop: 0,
-}
+})
 
-const ProjectContainer = () => {
-  const classes = useStyles()
+const ProjectContainer = ({
+  title,
+  subTitle,
+  body,
+  labels,
+  img,
+  color = {primary: colors.text, secondary: colors.textLight},
+  right = false,
+}:{
+  title: string,
+  subTitle: string,
+  body: string,
+  labels: Array<string>,
+  img: string,
+  color?: IColor,
+  right?: boolean,
+}) => {
+  const props = {right, color}
+  const classes = useStyles(props)
+  
+  const ProjectImg = () => (
+    <Grid className={classes.imgContainer} container item xs={6}>
+      <Grid className={classes.bgBox} item></Grid>
+      <Image
+        color="transparent"
+        style={imgStyles(right)}
+        imageStyle={{objectFit: 'contain'}}
+        src={img}
+      />
+    </Grid>
+  )
+  const ProjectDetails = () => (
+    <Grid
+      className={classes.textContainer}
+      container
+      item
+      direction="column" 
+      alignItems={right ? 'flex-end' : 'flex-start'}
+      justify="center"
+      xs={6}>
+      <Typography className={classes.title} variant="h2">
+        { title }
+      </Typography>
+      <Typography className={classes.subtitle} variant="subtitle1">
+        { subTitle }
+      </Typography>
+      <Typography variant="body1">
+        { body }
+      </Typography>
+      <SkillTags labels={labels} bgColor={color.primary} right={right}/>
+    </Grid>
+  )
 
   return (
     <Grid className={classes.root} container item>
-      <Grid className={classes.imgContainer} container item xs={6}>
-        <Grid className={classes.bgBox} item></Grid>
-        <Image
-          color="transparent"
-          style={imgStyles}
-          imageStyle={{objectFit: 'contain'}}
-          src={pokemonImg}
-        />
-      </Grid>
-      {/* <Grid className={classes.grow} item /> */}
-      <Grid className={classes.textContainer} container item direction="column" justify="center" xs={6}>
-        <Typography variant="h2">
-          Pokémon
-        </Typography>
-        <Typography className={classes.subtitle} variant="subtitle1">
-          Web App
-        </Typography>
-        <Typography variant="body1">
-          An intuitive & modern design for a comprehensive & featured packed application
-        </Typography>
-        <SkillTags
-          labels={['jQuery','Gulp.js','Node.js','Sass','InVision','Illustrator']}
-        />
-      </Grid>
+    {
+      right ?
+      <>
+        <ProjectDetails />
+        <ProjectImg />
+      </> : 
+      <>
+        <ProjectImg />
+        <ProjectDetails />
+      </>
+    }
     </Grid>
   )
 }

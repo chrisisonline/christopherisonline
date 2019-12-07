@@ -2,14 +2,13 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Typography } from '@material-ui/core'
 //components & theme
-import { styleVars } from '../theme'
-import BgImage from '../components/BgImage'
+import { styleVars, colors } from '../theme'
 import ProjectContainer from '../components/ProjectContainer'
 //img assets
-import longboardImg from '../imgs/longboard.png'
-import laptopImg from '../imgs/laptop.png'
-import designImg from '../imgs/design.png'
-import SkillTags from '../components/SkillTags'
+import pokemonImg from '../imgs/pokemon.png'
+import upverterImg from '../imgs/upverter.png'
+import websiteImg from '../imgs/website.png'
+import resumesImg from '../imgs/resumes.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,8 +22,40 @@ const Projects = () => {
 
   return (
     <Grid className={classes.root} container item xs={9}>
-      <ProjectContainer />
-      <ProjectContainer />
+      <ProjectContainer
+        title="Pokémon"
+        subTitle="Web App"
+        body="An intuitive & modern design for a comprehensive & featured packed application"
+        labels={['jQuery','Gulp.js','Node.js','Sass','InVision','Illustrator']}
+        img={pokemonImg}
+        color={{primary: colors.blue, secondary: colors.blueLight}}
+      />
+      <ProjectContainer
+        title="Upverter"
+        subTitle="UI Redesign"
+        body="Created over 60 Wireframes, Mockups, and Prototypes to enhance user experience"
+        labels={['Adobe XD','Figma','Illustrator','Google Closure','Flask','Jinja','Phabricator']}
+        img={upverterImg}
+        color={{primary: colors.yellow, secondary: colors.yellowLight}}
+        right
+      />
+      <ProjectContainer
+        title="Portfolio"
+        subTitle="Website"
+        body="Uniquely designed from the ground up, every element you see was custom made!"
+        labels={['React','React-router','Material UI','Node.js','Yarn','Git','Figma']}
+        img={websiteImg}
+        color={{primary: colors.red, secondary: colors.redLight}}
+      />
+      <ProjectContainer
+        title="Resume"
+        subTitle="Design Service"
+        body="3 Custom designed templates to help organize & format resumes. Eye catching designs that are easy to read and stand out from the crowd"
+        labels={['Illustrator','InDesign','Figma']}
+        img={resumesImg}
+        color={{primary: colors.green, secondary: colors.greenLight}}
+        right
+      />
     </Grid>
   )
 }

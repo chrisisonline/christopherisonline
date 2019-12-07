@@ -5,20 +5,26 @@ import { colors } from '../theme'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    float: (right: boolean) => right && 'right',
+    float: (props: any) => props.right && 'right' as any,
     paddingTop: theme.spacing(2),
-    // width: '66%',
-  } as any,
+    width: '80%',
+  },
+  tag: {
+    backgroundColor: (props: any) => props.bgColor as any,
+  }
 }))
 
 const SkillTags = ({
   labels,
   right = false,
-}: {
+  bgColor = colors.text,
+}:{
   labels: Array<string>,
   right?: boolean,
+  bgColor?: string,
 }) => {
-  const classes = useStyles(right)
+  const props = {right, bgColor}
+  const classes = useStyles(props)
 
   return (
     <Grid 
@@ -31,7 +37,7 @@ const SkillTags = ({
       {
         labels.map((label, index) => (
           <Grid item key={`${label}-${index}`}>
-            <Chip label={label}/>
+            <Chip className={classes.tag} label={label}/>
           </Grid>
         ))
       }

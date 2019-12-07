@@ -11,7 +11,19 @@ export const colors = {
   text15: '#E5E5E5',
   white90: 'rgba(255, 255, 255, 0.9)',
   white95: 'rgba(255, 255, 255, 0.95)',
+  blue: '#2C6C9A',
+  blueLight: '#5896C2',
+  yellow: '#DAB030',
+  yellowLight: '#E4C873',
+  red: '#CE5A51',
+  redLight: '#E38881',
+  green: '#40734E',
+  greenLight: '#6F9A7B',
 }
+export interface IColor {
+  primary: string,
+  secondary: string,
+ }
 
 //font families
 const Ubuntu = '"Ubuntu", sans-serif'

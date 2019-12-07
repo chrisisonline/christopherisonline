@@ -27,11 +27,11 @@ export const routes = [
   },
   {
     path: "/experience",
-    render: () => <h2>Experience</h2>
+    render: () => <h2>Experience, still in progress!</h2>
   },
   {
     path: "/contact",
-    render: () => <h2>Contact</h2>
+    render: () => <h2>Contacts, still in progress!</h2>
   },
 ]
 
