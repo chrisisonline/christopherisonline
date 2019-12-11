@@ -1,8 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 //components & theme
-import { styleVars, colors } from '../theme'
+import { colors, rootStyles } from '../theme'
 import ProjectContainer from '../components/ProjectContainer'
 //img assets
 import pokemonImg from '../imgs/pokemon.png'
@@ -11,10 +11,7 @@ import websiteImg from '../imgs/website.png'
 import resumesImg from '../imgs/resumes.png'
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    margin: 'auto',
-    paddingTop: styleVars.navBar,
-  },
+  root: rootStyles,
 }))
 
 const Projects = () => {

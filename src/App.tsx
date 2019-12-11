@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
+  useLocation,
   Route
 } from "react-router-dom"
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles'
@@ -13,6 +14,7 @@ import { myTheme, colors, styleVars } from './theme'
 import NavBar from './components/NavBar'
 import Home from './views/Home'
 import Projects from './views/Projects'
+import Experience from './views/Experience'
 
 //site routing
 export const routes = [
@@ -27,7 +29,7 @@ export const routes = [
   },
   {
     path: "/experience",
-    render: () => <h2>Experience, still in progress!</h2>
+    render: () => <Experience />
   },
   {
     path: "/contact",
@@ -49,6 +51,7 @@ const useStyles = makeStyles(theme => ({
   } as any,
   root: {
     fontSize: '0.75rem',
+    minHeight: '100vh',
   },
   body: {
     margin: 'auto',
@@ -67,10 +70,20 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 const App = () => {
   const [loading, setLoading] = React.useState(true)
   const classes = useStyles(loading)
-  setTimeout(() => setLoading(false), 100)
+  setTimeout(() => setLoading(false), 1800)
   
   useEffect(() => {
     if (loading)
@@ -83,6 +96,7 @@ const App = () => {
     <ThemeProvider theme={myTheme}>
       {/* <Router> */}
       <Router basename="/test/">
+        <ScrollToTop />
         <Grid className={classes.loading} id="loading" container justify="center" alignItems="center">
           <FlagSpinner size={80} color={colors.text30} />
         </Grid>

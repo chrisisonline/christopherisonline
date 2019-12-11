@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     transition: '0.7s',
   },
   navBarOpaque: {
-    backgroundColor: 'rgba(255,255,255,0.9)',
+    backgroundColor: 'rgba(255,255,255,0.95)',
     boxShadow: myTheme.shadows[1],
     height: '5vw',
   },

@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Typography } from '@material-ui/core'
 //components & theme
-import { styleVars } from '../theme'
+import { styleVars, rootStyles } from '../theme'
 import BgImage from '../components/BgImage'
 import TextContainer, { StatContainer } from '../components/TextContainer'
 //img assets
@@ -12,10 +12,7 @@ import designImg from '../imgs/design.png'
 import SkillTags from '../components/SkillTags'
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    margin: 'auto',
-    paddingTop: styleVars.navBar,
-  },
+  root: rootStyles,
   contentContainer: {
     height: styleVars.contentContainer,
   },

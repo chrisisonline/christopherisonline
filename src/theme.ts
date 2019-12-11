@@ -9,8 +9,9 @@ export const colors = {
   textLight: '#828282',
   text30: '#C7C7C7',
   text15: '#E5E5E5',
-  white90: 'rgba(255, 255, 255, 0.9)',
   white95: 'rgba(255, 255, 255, 0.95)',
+  white90: 'rgba(255, 255, 255,  0.9)',
+  white70: 'rgba(255, 255, 255,  0.7)',
   blue: '#2C6C9A',
   blueLight: '#5896C2',
   yellow: '#DAB030',
@@ -34,6 +35,11 @@ export const styleVars = {
   navBar: '12vw',
   imgContainer: '48vw',
   contentContainer: '36vw',
+}
+export const rootStyles = {
+  margin: 'auto',
+  paddingTop: styleVars.navBar,
+  paddingBottom: styleVars.navBar,
 }
 
 //Mui Theme overrides
@@ -118,9 +124,14 @@ export const myTheme = createMuiTheme({
         borderRadius: 8,
         color: 'white',
         fontSize: '1em',
-        height: 30,
+        height: 28,
       }
     },
+    MuiTypography: {
+      body1:{
+        whiteSpace: 'pre-line',
+      }
+    }
   }
 })
 

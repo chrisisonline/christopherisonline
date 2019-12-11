@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: -theme.spacing(1),
   },
   statRoot: {
-    padding: theme.spacing(18, 0, 24),
+    paddingTop: theme.spacing(18),
   },
   statTitle: {
     paddingBottom: theme.spacing(6),
