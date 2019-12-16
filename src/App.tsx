@@ -15,6 +15,7 @@ import NavBar from './components/NavBar'
 import Home from './views/Home'
 import Projects from './views/Projects'
 import Experience from './views/Experience'
+import Contact from './views/Contact'
 
 //site routing
 export const routes = [
@@ -33,7 +34,7 @@ export const routes = [
   },
   {
     path: "/contact",
-    render: () => <h2>Contacts, still in progress!</h2>
+    render: () => <Contact />
   },
 ]
 
@@ -83,7 +84,7 @@ const ScrollToTop = () => {
 const App = () => {
   const [loading, setLoading] = React.useState(true)
   const classes = useStyles(loading)
-  setTimeout(() => setLoading(false), 1800)
+  setTimeout(() => setLoading(false), 2000)
   
   useEffect(() => {
     if (loading)

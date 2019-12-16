@@ -2,34 +2,11 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core'
 //components & theme
-import { colors, rootStyles } from '../theme' 
+import { rootStyles } from '../theme' 
 import ExpContainer, {YearContainer} from '../components/ExpContainer'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(({
   root: rootStyles,
-  years: {
-    color: colors.text15,
-    marginLeft: -theme.spacing(6),
-    marginBottom: -theme.spacing(2),
-  },
-  jobContainer: {
-    // height: 220,
-  },
-  dateBox: {
-    backgroundColor: colors.text30,
-    height: '100%',
-  },
-  date: {
-    color: 'white',
-    fontSize: '1.85em',
-    textAlign: 'center',
-  },
-  textContainer: {
-    paddingLeft: theme.spacing(6),
-  },
-  subtitle: {
-    marginTop: -theme.spacing(1),
-  },
 }))
 
 const Experience = () => {

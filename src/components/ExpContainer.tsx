@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: -theme.spacing(2),
   },
   dateBox: {
-    backgroundColor: colors.text30,
+    backgroundColor: colors.textLight,
   },
   date: {
     color: 'white',

@@ -16,14 +16,6 @@ const useStyles = makeStyles(theme => ({
   contentContainer: {
     height: styleVars.contentContainer,
   },
-  textContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    width: '75%',
-    padding: theme.spacing(6, 9),
-  },
-  subtitle: {
-    marginTop: '-0.35em',
-  },
 }))
 
 const Home = () => {

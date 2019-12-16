@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
   },
   textContainer: {
-    backgroundColor: colors.white95,
+    backgroundColor: colors.white90,
     textAlign: (right: any) => right && 'right',
     padding: theme.spacing(9, 12), 
     width: '75%',
