@@ -30,9 +30,15 @@ const useStyles = makeStyles(theme => ({
       textAlign: 'right',
       paddingLeft: theme.spacing(9),
       paddingRight: theme.spacing(3),
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: 0,
+      }
     } : {
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(9),
+      [theme.breakpoints.down('sm')]: {
+        paddingRight: 0,
+      }
     }) as any,
   title: {
     color: (props: any) => props.color.primary as any,

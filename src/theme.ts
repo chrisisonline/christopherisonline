@@ -45,10 +45,11 @@ export const rootStyles = {
 //Mui Theme overrides
 export const myTheme = createMuiTheme({
   breakpoints: {
+    keys: ["xs","sm","md","lg","xl"],
     values: {
-      xs: 0,
-      sm: 600,
-      md: 960,
+      xs: 425,
+      sm: 900,
+      md: 1280,
       lg: 1600,
       xl: 1920,
     },
@@ -76,7 +77,7 @@ export const myTheme = createMuiTheme({
     body1: {
       color: colors.text,
       fontWeight: 400,
-      fontSize: '1.2em',
+      fontSize: '1.3em',
     },
     button: {
       fontFamily: Raleway,
@@ -128,9 +129,12 @@ export const myTheme = createMuiTheme({
       }
     },
     MuiTypography: {
-      body1:{
+      body1: {
         whiteSpace: 'pre-line',
-      }
+      },
+      subtitle1: {
+        whiteSpace: 'nowrap',
+      },
     }
   }
 })

@@ -6,10 +6,10 @@ import Image from 'material-ui-image'
 const useStyles = makeStyles(theme => ({
   root: {
     position: 'relative',
-    marginLeft: theme.spacing(8),
+    marginLeft: '2vw',
   },
   title: {
-    marginTop: theme.spacing(10),
+    marginTop: '4vw',
   },
   description: {
     marginTop: -theme.spacing(1.5),
@@ -34,8 +34,8 @@ const ContactContainer = ({
         color="transparent"
         style={{
           position: 'absolute',
-          top: 0,
-          left: -theme.spacing(8),
+          top: '-2vw',
+          left: '-3.5vw',
           bottom: 0,
           padding: 0,
           width: '22%',

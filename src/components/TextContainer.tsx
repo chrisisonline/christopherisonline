@@ -11,8 +11,11 @@ const useStyles = makeStyles(theme => ({
   textContainer: {
     backgroundColor: colors.white90,
     textAlign: (right: any) => right && 'right',
-    padding: theme.spacing(9, 12), 
+    padding: '5vw 7vw', 
     width: '75%',
+    [theme.breakpoints.down('sm')]: {
+      width: '90%',
+    }
   } as any,
   subtitle: {
     marginTop: -theme.spacing(1),

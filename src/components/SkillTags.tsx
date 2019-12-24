@@ -11,6 +11,9 @@ const useStyles = makeStyles(theme => ({
   },
   tag: {
     backgroundColor: (props: any) => props.bgColor as any,
+    [theme.breakpoints.down('sm')]: {
+      height: 24,
+    }
   }
 }))
 

@@ -13,7 +13,7 @@ const Experience = () => {
   const classes = useStyles()
 
   return (
-    <Grid className={classes.root} container item direction="column" xs={7} lg={6} spacing={4}>
+    <Grid className={classes.root} container item direction="column"  sm={8} md={7} lg={6} spacing={4}>
       <YearContainer year="2019" />
       <ExpContainer
         company="SpankChain"
