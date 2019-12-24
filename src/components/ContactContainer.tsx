@@ -1,7 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { useTheme, Grid, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
+//components
 import Image from 'material-ui-image'
+//redux
+import { useSelector } from 'react-redux'
+import { BrowserSize } from '../redux/actions'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,7 +30,10 @@ const ContactContainer = ({
   imgSrc: string,
 }) => {
   const classes = useStyles()
-  const theme = useTheme()
+  const browserSize = useSelector(
+    (state: any) => state.browserSize as BrowserSize
+  )
+  const isMobile = browserSize === "sm" || browserSize === "xs"
 
   return (
     <Grid className={classes.root} item container direction="column">
@@ -38,7 +45,7 @@ const ContactContainer = ({
           left: '-3.5vw',
           bottom: 0,
           padding: 0,
-          width: '22%',
+          width: isMobile ? '33%' : '22%',
           zIndex: -1,
         }}
         imageStyle={{objectFit: 'contain'}}

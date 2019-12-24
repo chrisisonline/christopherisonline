@@ -4,6 +4,8 @@ import classnames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, AppBar, Toolbar, Button, Typography } from '@material-ui/core'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+//components
+import SideBarMobile from './SideBarMobile'
 import { styleVars, colors } from '../theme'
 //redux
 import { useSelector } from 'react-redux'
@@ -11,8 +13,19 @@ import { BrowserSize } from '../redux/actions'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: styleVars.navBar,
+    height: styleVars.navBarMobile,
     transition: '0.7s',
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    [theme.breakpoints.only('xs')]: {
+      paddingLeft: theme.spacing(4),
+      paddingRight: theme.spacing(4),
+    },
+    [theme.breakpoints.up('sm')]: {
+      height: styleVars.navBar,
+      paddingLeft: '10vw',
+      paddingRight: '10vw',
+    },
   },
   navBarOpaque: {
     backgroundColor: 'rgba(255,255,255,0.95)',
@@ -23,9 +36,13 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   title: {
-    [theme.breakpoints.down('sm')]: {
+    fontSize: '4.7em',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '6em',
+    },
+    [theme.breakpoints.up('sm')]: {
       fontSize: '7em',
-    }
+    },
   },
   whiteTitle: {
     color: 'white',
@@ -39,22 +56,71 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const NavList = ({
+  navLinks,
+  currPageUrl,
+  setPageUrl,
+}:{
+  navLinks: Array<NavLink>,
+  currPageUrl: string,
+  setPageUrl: (link: string) => void
+}) => {
+  const classes = useStyles()
+  return (
+    <>
+      { navLinks.map((navLink, index) => (
+        <Grid item key={`${navLink.text}-${index}`}>
+          <Link
+            to={navLink.link}
+            onClick={() => setPageUrl(navLink.link)}
+          >
+            <Button
+              className={classnames(
+                classes.navBtn,
+                {[classes.navBtnSelected]: currPageUrl === navLink.link}
+              )}
+            >
+                {navLink.text}
+            </Button>
+          </Link>
+        </Grid>
+      )) }
+    </>
+  )
+}
+
+export interface NavLink {
+  text: string,
+  link: string,
+}
+
 const NavBar = () => {
+  //get url from react-router
   const currPath = useLocation().pathname
+  //states
   const [navBarOpaque, setNavBarOpaque] = useState(false)
   const [pageUrl, setPageUrl] = useState(currPath)
+  //set state url path
   if (currPath !== pageUrl) setPageUrl(currPath)
 
   const classes = useStyles(navBarOpaque)
-  
   const browserSize = useSelector((state: any) => state.browserSize as BrowserSize)
+  //convert url to navBar text
   const returntitleContainer = () => {
     if (pageUrl === '/')
     return 'HOME'
     else
     return pageUrl.substr(1).toUpperCase()
   }
-  
+
+  //navigation links
+  const navLinks: Array<NavLink> = [
+    {text: 'HOME', link: '/'},
+    {text: 'PROJECTS', link: '/projects'},
+    {text: 'EXPERIENCE', link: 'experience'},
+    {text: 'CONTACT', link: '/contact'},
+  ]
+
   useScrollPosition(
     ({ currPos }) => {
       if (currPos.y > -100) {
@@ -89,21 +155,13 @@ const NavBar = () => {
             }
           </Grid>
           {
-            ['/', '/projects', '/experience', '/contact'].map((navLink, index) => (
-              <Grid item key={`${navLink.substr(1)}-${index}`}>
-                <Button
-                  onClick={() => setPageUrl(navLink)}
-                  className={classnames(
-                    classes.navBtn,
-                    {[classes.navBtnSelected]: pageUrl === navLink}
-                  )}
-                >
-                  <Link to={navLink}>
-                    {navLink === '/' ? 'HOME' : navLink.substr(1).toUpperCase()}
-                  </Link>
-                </Button>
-              </Grid>
-            ))
+            browserSize === "sm" || browserSize === "xs" ?
+            <SideBarMobile navLinks={navLinks} /> :
+            <NavList
+              navLinks={navLinks}
+              currPageUrl={pageUrl}
+              setPageUrl={setPageUrl}
+            />
           }
         </Grid>
       </Toolbar>

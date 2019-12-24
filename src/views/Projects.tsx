@@ -11,14 +11,17 @@ import websiteImg from '../imgs/website.png'
 import resumesImg from '../imgs/resumes.png'
 
 const useStyles = makeStyles(theme => ({
-  root: rootStyles,
+  root: {
+    paddingTop: '20vw',
+    ...rootStyles
+  },
 }))
 
 const Projects = () => {
   const classes = useStyles()
 
   return (
-    <Grid className={classes.root} container item xs={9}>
+    <Grid className={classes.root} container item xs={11} sm={9}>
       <ProjectContainer
         title="Pokémon"
         subTitle="Web App"

@@ -13,13 +13,13 @@ const Experience = () => {
   const classes = useStyles()
 
   return (
-    <Grid className={classes.root} container item direction="column"  sm={8} md={7} lg={6} spacing={4}>
+    <Grid className={classes.root} container item direction="column"  xs={12} sm={8} md={7} lg={6} spacing={4}>
       <YearContainer year="2019" />
       <ExpContainer
         company="SpankChain"
         jobTitle="Front-End Developer"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="MAY"
         endDate="NOW"
@@ -28,7 +28,7 @@ const Experience = () => {
         company="LCBO Next"
         jobTitle="UI &UX Developer"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="JAN"
         endDate="APR"
@@ -38,7 +38,7 @@ const Experience = () => {
         company="Upverter"
         jobTitle="UI&UX Developer"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="MAY"
         endDate="AUG"
@@ -48,7 +48,7 @@ const Experience = () => {
         company="American Express"
         jobTitle="Innovation Lab Jr Engineer"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="MAY"
         endDate="AUG"
@@ -58,7 +58,7 @@ const Experience = () => {
         company="OpenText"
         jobTitle="R&D Support Specialist"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="SEP"
         endDate="DEC"
@@ -67,7 +67,7 @@ const Experience = () => {
         company="Manulife"
         jobTitle="Technical Analyst"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="JAN"
         endDate="APR"
@@ -77,7 +77,7 @@ const Experience = () => {
         company="Academy of Music"
         jobTitle="Piano Instructor"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="SEP/12"
         endDate="MAY/14"
@@ -86,7 +86,7 @@ const Experience = () => {
         company="City of Saskatoon"
         jobTitle="Lifeguard & Instructor"
         description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem velit pellentesque rhoncus eros.
+        Integer aliquet egestas aliquet sit lorem.
         Lacus in quis enim, varius neque in.`}
         startDate="FEB/13"
         endDate="MAR/14"

@@ -8,16 +8,26 @@ const useStyles = makeStyles(theme => ({
   root: {
     position: 'absolute',
     top: 0,
-    width: '44vw',
     zIndex: -5,
+    width: '80vw',
+    [theme.breakpoints.up("sm")]:{
+      width: '44vw',
+    }
   },
   landing: {
-    left: '6vw',
-    height: styleVars.imgContainer,
+    left: 0,
+    height: styleVars.imgContainerMobile,
+    [theme.breakpoints.up("sm")]:{
+      left: '6vw',
+      height: styleVars.imgContainer,
+    }
   },
   left: {
-    left: '-6.5vw',
+    left: 0,
     height: '100%',
+    [theme.breakpoints.up("sm")]:{
+      left: '-6.5vw',
+    }
   },
   right: {
     right: '-6.5vw',

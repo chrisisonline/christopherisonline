@@ -18,7 +18,7 @@ const Contact = () => {
   const classes = useStyles()
 
   return (
-    <Grid className={classes.root} container item direction="column" xs={7} lg={6} spacing={4}>
+    <Grid className={classes.root} container item direction="column" xs={11} sm={7} lg={6} spacing={4}>
       <ContactContainer
         title="Email"
         description="christopherjiang@outlook.com"

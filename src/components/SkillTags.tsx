@@ -7,14 +7,25 @@ const useStyles = makeStyles(theme => ({
   root: {
     float: (props: any) => props.right && 'right' as any,
     paddingTop: theme.spacing(2),
-    width: '80%',
+    [theme.breakpoints.up('sm')]: {
+      width: '80%',
+    }
   },
   tag: {
     backgroundColor: (props: any) => props.bgColor as any,
-    [theme.breakpoints.down('sm')]: {
-      height: 24,
+    height: 23,
+    [theme.breakpoints.up('sm')]: {
+      height: 29,
     }
-  }
+  },
+  label: {
+    paddingLeft: theme.spacing(1.2),
+    paddingRight: theme.spacing(1.2),
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing(1.6),
+      paddingRight: theme.spacing(1.6),
+    }
+  },
 }))
 
 const SkillTags = ({
@@ -40,7 +51,7 @@ const SkillTags = ({
       {
         labels.map((label, index) => (
           <Grid item key={`${label}-${index}`}>
-            <Chip className={classes.tag} label={label}/>
+            <Chip classes={{root: classes.tag, label: classes.label}} label={label}/>
           </Grid>
         ))
       }

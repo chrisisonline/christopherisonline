@@ -30,18 +30,6 @@ export interface IColor {
 const Ubuntu = '"Ubuntu", sans-serif'
 const Raleway = '"Raleway", sans-serif'
 
-//style variables
-export const styleVars = {
-  navBar: '12vw',
-  imgContainer: '48vw',
-  contentContainer: '36vw',
-}
-export const rootStyles = {
-  margin: 'auto',
-  paddingTop: styleVars.navBar,
-  paddingBottom: styleVars.navBar,
-}
-
 //Mui Theme overrides
 export const myTheme = createMuiTheme({
   breakpoints: {
@@ -99,21 +87,11 @@ export const myTheme = createMuiTheme({
       gutters: {
         paddingLeft: MuiTheme.spacing(2),
         paddingRight: MuiTheme.spacing(2),
-        [MuiTheme.breakpoints.up('sm')]: {
-          paddingLeft: '10vw',
-          paddingRight: '10vw',
-        },
-      },
-      /* Styles applied to the root element if `variant="regular"`. */
-      regular: MuiTheme.mixins.toolbar,
-      /* Styles applied to the root element if `variant="dense"`. */
-      dense: {
-        minHeight: 48,
-      },
+      }
     },
     MuiButton: {
       root: {
-        color: colors.text30,
+        color: colors.textLight,
       },
       text: {
         padding: MuiTheme.spacing(1, 1.5)
@@ -125,7 +103,6 @@ export const myTheme = createMuiTheme({
         borderRadius: 8,
         color: 'white',
         fontSize: '1em',
-        height: 28,
       }
     },
     MuiTypography: {
@@ -138,5 +115,24 @@ export const myTheme = createMuiTheme({
     }
   }
 })
+
+//style variables
+export const styleVars = {
+  navBar: '12vw',
+  imgContainer: '48vw',
+  contentContainer: '36vw',
+  navBarMobile: '24vw',
+  imgContainerMobile: '140vw',
+  contentContainerMobile: '116vw',
+}
+export const rootStyles = {
+  margin: 'auto',
+  paddingTop: styleVars.navBarMobile,
+  paddingBottom: '24vw',
+  [myTheme.breakpoints.up('sm')]: {
+    paddingTop: styleVars.navBar,
+    paddingBottom: '16vw',
+  }
+}
 
 export default myTheme

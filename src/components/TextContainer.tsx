@@ -5,41 +5,74 @@ import { styleVars, colors } from '../theme'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: styleVars.contentContainer,
+    height: styleVars.contentContainerMobile,
     position: 'relative',
+    [theme.breakpoints.up("sm")]:{
+      height: styleVars.contentContainer,
+    }
   },
   textContainer: {
     backgroundColor: colors.white90,
     textAlign: (right: any) => right && 'right',
-    padding: '5vw 7vw', 
-    width: '75%',
-    [theme.breakpoints.down('sm')]: {
-      width: '90%',
+    padding: theme.spacing(4, 2),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      padding: '5vw 7vw',
+      width: '75%',
     }
   } as any,
+  title: {
+    fontSize: '4.2em',
+    [theme.breakpoints.up("sm")]: {
+      fontSize: '5.25em',
+    },
+  },
   subtitle: {
-    marginTop: -theme.spacing(1),
+    marginTop: -theme.spacing(0.5),
+    fontSize: '2.6em',
+    [theme.breakpoints.up("sm")]: {
+      marginTop: -theme.spacing(1),
+      fontSize: '3.25em',
+    },
   },
   statRoot: {
-    paddingTop: theme.spacing(18),
+    padding: theme.spacing(9, 2),
+    [theme.breakpoints.up("sm")]: {
+      padding: theme.spacing(18, 0, 0),
+    },
   },
   statTitle: {
-    paddingBottom: theme.spacing(6),
+    paddingBottom: theme.spacing(3),
+    [theme.breakpoints.up("sm")]: {
+      paddingBottom: theme.spacing(9),
+    }
   },
   statContainer: {
     position: 'relative',
     marginBottom: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: 0,
+    }
   },
   statNumber: {
     color: colors.text15,
     fontSize: '10em',
-    padding: theme.spacing(0, 7),
+    [theme.breakpoints.up("sm")]: {
+      padding: theme.spacing(0, 7),
+    },
   },
   statDescription: {
     position: 'absolute',
-    left: theme.spacing(13),
-    bottom: -theme.spacing(1.5),
+    left: theme.spacing(4.5),
+    bottom: -theme.spacing(3),
     fontSize: '2.74em',
+    lineHeight: '1.2em',
+    whiteSpace: 'normal',
+    [theme.breakpoints.up("sm")]: {
+      left: theme.spacing(13),
+      bottom: -theme.spacing(1.5),
+    },
   },
   
 }))
@@ -65,14 +98,21 @@ export const StatContainer = ({
       alignContent="center"
       justify="center"
     >
-      <Grid className={classes.statTitle} item xs={10}>
-        <Typography variant="h2">
+      <Grid className={classes.statTitle} item xs={12} sm={10}>
+        <Typography className={classes.title} variant="h2">
           { title }
         </Typography>
       </Grid>
       {
         stats.map((item: IStatObj, index) => (
-          <Grid className={classes.statContainer} container item xs={5} key={`${item.description} ${index}`}>
+          <Grid
+            className={classes.statContainer}
+            key={`${item.description} ${index}`}
+            xs={6}
+            sm={5}
+            container
+            item
+          >
             <Typography className={classes.statNumber} variant="h2">
               { item.number }
             </Typography>
@@ -105,7 +145,7 @@ const TextContainer = ({
     <Grid className={classes.root} container item justify="center" alignContent="center">
       { bgImg }
       <Grid className={classes.textContainer} item>
-        <Typography variant="h2">
+        <Typography className={classes.title} variant="h2">
           { title }
         </Typography>
         <Typography className={classes.subtitle} variant="subtitle1">

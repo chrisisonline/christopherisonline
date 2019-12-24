@@ -11,7 +11,7 @@ import { Grid } from '@material-ui/core'
 import { FlagSpinner } from 'react-spinners-kit'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 //components, views & theme
-import { colors, styleVars } from './theme'
+import { colors } from './theme'
 import NavBar from './components/NavBar'
 import Home from './views/Home'
 import Projects from './views/Projects'
@@ -50,34 +50,21 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     right: 0,
     height: '100vh',
+    width: '100vw',
     transition: '0.6s',
     opacity: (loading: any) => loading || 0,
     zIndex: (loading: any) => loading ? 9999 : -9999,
   } as any,
   root: {
-    fontSize: '0.75rem',
+    fontSize: '0.58rem',
     minHeight: '100vh',
-    [theme.breakpoints.down('md')]: {
+    overflow: 'hidden',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '0.75rem',
+    },
+    [theme.breakpoints.only('xs')]: {
       fontSize: '0.68rem',
     },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '0.57rem',
-    },
-  },
-  body: {
-    margin: 'auto',
-    paddingTop: styleVars.navBar,
-  },
-  contentContainer: {
-    height: styleVars.contentContainer,
-  },
-  textContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    width: '75%',
-    padding: theme.spacing(6, 9),
-  },
-  subtitle: {
-    marginTop: '-0.35em',
   },
 }))
 
@@ -96,7 +83,6 @@ const App = () => {
   const classes = useStyles(loading)
   //redux
   const dispatch = useDispatch()
-  const browserSize = useSelector((state: any) => state.browserSize)
 
   //fake timer for loading screen :p
   setTimeout(() => setLoading(false), 100)
@@ -109,11 +95,11 @@ const App = () => {
       clearAllBodyScrollLocks()
 
     //set and update redux with the current browserSize
+    dispatch({ type: BROWSERSIZE_UPDATE, payload: window.screen.width })
     window.addEventListener(
       "resize",
       debounce(() => {
-        if (window.screen.width !== browserSize)
-          dispatch({ type: BROWSERSIZE_UPDATE, payload: window.screen.width })
+        dispatch({ type: BROWSERSIZE_UPDATE, payload: window.screen.width })
       }, 400)
     )
   })
@@ -121,10 +107,10 @@ const App = () => {
   return (
     <Router basename="/test/">
       <ScrollToTop />
-      <Grid className={classes.loading} id="loading" container justify="center" alignItems="center">
+      <Grid className={classes.loading} id="loading" container justify="center" alignItems="center" xs={12}>
         <FlagSpinner size={80} color={colors.text30} />
       </Grid>
-      <Grid className={classes.root} container>
+      <Grid className={classes.root} container xs={12}>
         <NavBar />
         <Switch>
           {

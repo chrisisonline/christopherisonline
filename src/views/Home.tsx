@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Typography } from '@material-ui/core'
 //components & theme
-import { styleVars, rootStyles } from '../theme'
+import { rootStyles } from '../theme'
 import BgImage from '../components/BgImage'
 import TextContainer, { StatContainer } from '../components/TextContainer'
 //img assets
@@ -13,16 +13,13 @@ import SkillTags from '../components/SkillTags'
 
 const useStyles = makeStyles(theme => ({
   root: rootStyles,
-  contentContainer: {
-    height: styleVars.contentContainer,
-  },
 }))
 
 const Home = () => {
   const classes = useStyles()
 
   return (
-    <Grid className={classes.root} container item xs={9}>
+    <Grid className={classes.root} container item xs={12} sm={9}>
       <BgImage src={longboardImg} isLanding imgPositioning="40% 50%"/>
       <TextContainer
         title="TL;DR"
@@ -34,7 +31,7 @@ const Home = () => {
       </TextContainer>
       <TextContainer
         title="Front-end Dev"
-        subTitle="Responsive & Clean Designs"
+        subTitle="Responsive, Fast, & Modern"
         right
         bgImg={<BgImage src={laptopImg} right imgPositioning="5% 20%"/>}
       >
@@ -43,12 +40,12 @@ const Home = () => {
         </Typography>
         <SkillTags labels={[
           'HTML5','CSS3','JavaScript','React.js','Redux','Node.js',
-          'Git','Yarn','MaterialUI','Grunt','Gulp','Webpack','Docker',
+          'MaterialUI','Gulp','Webpack','Docker',
         ]} right/>
       </TextContainer>
       <TextContainer
         title="UI&UX Design"
-        subTitle="Functional & Aesthetic Graphics"
+        subTitle="Simple, Clean, & Functional"
         bgImg={<BgImage src={designImg} imgPositioning="15% 50%"/>}
       >
         <Typography variant="body1">
