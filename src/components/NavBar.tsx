@@ -80,11 +80,11 @@ const NavList = ({
                 {[classes.navBtnSelected]: currPageUrl === navLink.link}
               )}
             >
-                {navLink.text}
+              {navLink.text}
             </Button>
           </Link>
         </Grid>
-      )) }
+      ))}
     </>
   )
 }
@@ -117,7 +117,7 @@ const NavBar = () => {
   const navLinks: Array<NavLink> = [
     {text: 'HOME', link: '/'},
     {text: 'PROJECTS', link: '/projects'},
-    {text: 'EXPERIENCE', link: 'experience'},
+    {text: 'EXPERIENCE', link: '/experience'},
     {text: 'CONTACT', link: '/contact'},
   ]
 
