@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core'
 //components & theme
-import { rootStyles } from '../theme' 
+import { rootStyles, colors } from '../theme' 
 import ExpContainer, {YearContainer} from '../components/ExpContainer'
 
 const useStyles = makeStyles(({
@@ -11,10 +11,28 @@ const useStyles = makeStyles(({
 
 const Experience = () => {
   const classes = useStyles()
+  const customColors = {
+    blue: {
+      primary: colors.blue,
+      secondary: colors.blueLight,
+    },
+    yellow: {
+      primary: colors.yellow,
+      secondary: colors.yellowLight,
+    },
+    red: {
+      primary: colors.red,
+      secondary: colors.redLight,
+    },
+    green: {
+      primary: colors.green,
+      secondary: colors.greenLight,
+    },
+  }
 
   return (
     <Grid className={classes.root} container item direction="column"  xs={12} sm={8} md={7} lg={6} spacing={4}>
-      <YearContainer year="2019" />
+      <YearContainer year="2019" customColors={customColors.blue}/>
       <ExpContainer
         company="SpankChain"
         jobTitle="Front-End Developer"
@@ -23,6 +41,7 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="MAY"
         endDate="NOW"
+        customColors={customColors.blue}
       />
       <ExpContainer
         company="LCBO Next"
@@ -32,8 +51,9 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="JAN"
         endDate="APR"
+        customColors={customColors.blue}
       />
-      <YearContainer year="2018" />
+      <YearContainer year="2018" customColors={customColors.yellow}/>
       <ExpContainer
         company="Upverter"
         jobTitle="UI&UX Developer"
@@ -42,8 +62,9 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="MAY"
         endDate="AUG"
+        customColors={customColors.yellow}
       />
-      <YearContainer year="2016" />
+      <YearContainer year="2016" customColors={customColors.red}/>
       <ExpContainer
         company="American Express"
         jobTitle="Innovation Lab Jr Engineer"
@@ -52,8 +73,9 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="MAY"
         endDate="AUG"
+        customColors={customColors.red}
       />
-      <YearContainer year="2015" />
+      <YearContainer year="2015" customColors={customColors.green}/>
       <ExpContainer
         company="OpenText"
         jobTitle="R&D Support Specialist"
@@ -62,6 +84,7 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="SEP"
         endDate="DEC"
+        customColors={customColors.green}
       />
       <ExpContainer
         company="Manulife"
@@ -71,8 +94,9 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="JAN"
         endDate="APR"
+        customColors={customColors.green}
       />
-      <YearContainer year="2014" />
+      <YearContainer year="2014" customColors={customColors.blue}/>
       <ExpContainer
         company="Academy of Music"
         jobTitle="Piano Instructor"
@@ -81,6 +105,7 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="SEP/12"
         endDate="MAY/14"
+        customColors={customColors.blue}
       />
       <ExpContainer
         company="City of Saskatoon"
@@ -90,6 +115,7 @@ const Experience = () => {
         Lacus in quis enim, varius neque in.`}
         startDate="FEB/13"
         endDate="MAR/14"
+        customColors={customColors.blue}
       />
     </Grid>
   )

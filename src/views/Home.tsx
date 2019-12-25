@@ -39,8 +39,8 @@ const Home = () => {
           I've had experience working with various team settings both big and small. I've delivered projects at many different levels and have always adapted to changing technologies.
         </Typography>
         <SkillTags labels={[
-          'HTML5','CSS3','JavaScript','React.js','Redux','Node.js',
-          'MaterialUI','Gulp','Webpack','Docker',
+          'HTML5','CSS3','JavaScript','React','Redux','Node',
+          'MaterialUI','Gulp','Docker','Git',
         ]} right/>
       </TextContainer>
       <TextContainer
@@ -62,7 +62,7 @@ const Home = () => {
           {number: '06', description: 'Coop Internships'},
           {number: '04', description: 'On-going Projects'},
           {number: '03', description: 'Years of Job Exp'},
-          {number: '23', description: 'Years Alive on Earth'},
+          {number: '2+', description: 'Coffees a Day'},
         ]}
       />
     </Grid>

@@ -22,17 +22,16 @@ const useStyles = makeStyles(theme => ({
     }
   } as any,
   title: {
-    fontSize: '4.2em',
-    [theme.breakpoints.up("sm")]: {
-      fontSize: '5.25em',
+    [theme.breakpoints.down(425)]: {
+      fontSize: '4.4em',
     },
   },
   subtitle: {
-    marginTop: -theme.spacing(0.5),
-    fontSize: '2.6em',
-    [theme.breakpoints.up("sm")]: {
-      marginTop: -theme.spacing(1),
-      fontSize: '3.25em',
+    lineHeight: 1,
+    margin: theme.spacing(0.5, 0, 1),
+    [theme.breakpoints.down(425)]: {
+      fontSize: '2.8em',
+      whiteSpace: 'normal',
     },
   },
   statRoot: {

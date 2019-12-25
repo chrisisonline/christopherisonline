@@ -10,13 +10,20 @@ import { BrowserSize } from '../redux/actions'
 const useStyles = makeStyles(theme => ({
   root: {
     position: 'relative',
+    marginTop: theme.spacing(3),
     marginLeft: '2vw',
+    [theme.breakpoints.down(425)]: {
+      fontSize: '0.38rem',
+    },
+    [theme.breakpoints.down(345)]: {
+      fontSize: '0.34rem',
+    },
   },
   title: {
     marginTop: '4vw',
   },
   description: {
-    marginTop: -theme.spacing(1.5),
+    lineHeight: 1,
   },
 }))
 

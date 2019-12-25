@@ -122,8 +122,8 @@ export const styleVars = {
   imgContainer: '48vw',
   contentContainer: '36vw',
   navBarMobile: '24vw',
-  imgContainerMobile: '140vw',
-  contentContainerMobile: '116vw',
+  imgContainerMobile: '150vw',
+  contentContainerMobile: '126vw',
 }
 export const rootStyles = {
   margin: 'auto',
