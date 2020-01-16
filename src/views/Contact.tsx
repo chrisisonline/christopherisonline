@@ -11,7 +11,10 @@ import gitHubImg from '../imgs/github.png'
 import mediumImg from '../imgs/medium.png'
 
 const useStyles = makeStyles(theme => ({
-  root: rootStyles,
+  root: {
+    ...rootStyles,
+    marginTop: 0,
+  },
 }))
 
 const Contact = () => {
@@ -26,17 +29,17 @@ const Contact = () => {
       />
       <ContactContainer
         title="LinkedIn"
-        description="https://linkedin.com/in/christopherjiang"
+        description="linkedin.com/in/christopherjiang"
         imgSrc={linkedInImg}
       />
       <ContactContainer
         title="GitHub"
-        description="https://github.com/chrisisonline"
+        description="github.com/chrisisonline"
         imgSrc={gitHubImg}
       />
       <ContactContainer
         title="Medium"
-        description="https://medium.com/@cj.design"
+        description="medium.com/@cj.design"
         imgSrc={mediumImg}
       />
     </Grid>

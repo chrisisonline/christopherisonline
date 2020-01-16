@@ -39,8 +39,8 @@ const Home = () => {
           I've had experience working with various team settings both big and small. I've delivered projects at many different levels and have always adapted to changing technologies.
         </Typography>
         <SkillTags labels={[
-          'HTML5','CSS3','JavaScript','React.js','Redux','Node.js',
-          'MaterialUI','Gulp','Webpack','Docker',
+          'HTML5','CSS3','JavaScript','React','Redux','Node',
+          'MaterialUI','Gulp','Docker','Git',
         ]} right/>
       </TextContainer>
       <TextContainer
