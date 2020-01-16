@@ -18,18 +18,18 @@ const Experience = () => {
       <ExpContainer
         company="SpankChain"
         jobTitle="Front-End Developer"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Building front-end infrastructure using React and Material UI
+        Coordinating with the design and engineering leads to create flexible components
+        Created a style guide documentation using Storybook`}
         startDate="MAY"
         endDate="NOW"
       />
       <ExpContainer
         company="LCBO Next"
         jobTitle="UI &UX Developer"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Designed and developed mobile and responsive web applications using React and Sketch
+        Used an Agile workflow to complete multiple prototypes and products
+        Lead stand-ups, outlined project requirements, and scheduled deliverables`}
         startDate="JAN"
         endDate="APR"
       />
@@ -37,9 +37,9 @@ const Experience = () => {
       <ExpContainer
         company="Upverter"
         jobTitle="UI&UX Developer"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Overhauled and documented changes for the Upverter UI
+        Front-End updates using Google Closure, Sass, and Flask
+        Tested and pushed changes into production`}
         startDate="MAY"
         endDate="AUG"
       />
@@ -47,9 +47,9 @@ const Experience = () => {
       <ExpContainer
         company="American Express"
         jobTitle="Innovation Lab Jr Engineer"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Designing and wireframing prototypes to solve inhouse business problems
+        Pitching business proposals and ideas multiple division leaders
+        Deploying front-end applications in to production with ePaas`}
         startDate="MAY"
         endDate="AUG"
       />
@@ -57,18 +57,16 @@ const Experience = () => {
       <ExpContainer
         company="OpenText"
         jobTitle="R&D Support Specialist"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Supporting R&D teams by tracking issues, testing features, and writing documentation
+        Connecting multiple teams to solve problems via JIRA and Confluence`}
         startDate="SEP"
         endDate="DEC"
       />
       <ExpContainer
         company="Manulife"
         jobTitle="Technical Analyst"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Managing team resources, data, and projects using Excel and Sharepoint
+        Assisting departments by upgrading to new infrastructure and equipment`}
         startDate="JAN"
         endDate="APR"
       />
@@ -76,18 +74,17 @@ const Experience = () => {
       <ExpContainer
         company="Academy of Music"
         jobTitle="Piano Instructor"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Teaching students of various ages (5-21) music theory and keyboard techniques
+        Organizing and scheduling lesson plans for every student`}
         startDate="SEP/12"
         endDate="MAY/14"
       />
       <ExpContainer
         company="City of Saskatoon"
         jobTitle="Lifeguard & Instructor"
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer aliquet egestas aliquet sit lorem.
-        Lacus in quis enim, varius neque in.`}
+        description={`Held multiple certifications from Redcross for CPR, First Aid, NLS, and WSL
+        Maintained
+        Maintaining the facility, performing opening and closing duties, and ensuring the safety of patrons`}
         startDate="FEB/13"
         endDate="MAR/14"
       />

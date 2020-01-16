@@ -26,7 +26,7 @@ const Home = () => {
         subTitle="In case you're in a hurry"
       >
         <Typography variant="body1">
-          I’m a self-taught <b>UI/UX Designer</b> & <b>Front-End Developer</b>. Curiosity has driven me become a jack-of-all traits with experience as a <b>Product Manager</b>, <b>Product Designer</b>, <b>Music Instructor</b>, <b>Lifeguard</b>, and <b>Sub-Par Longboarder</b>.
+          I’m a self-taught <b>UI/UX Designer</b> & <b>Front-End Developer</b>. Curiosity has driven me become a jack-of-all trades with experience as a <b>Product Manager</b>, <b>IT Support</b>, <b>Music Instructor</b>, and <b>Lifeguard</b>.
         </Typography>
       </TextContainer>
       <TextContainer
@@ -49,7 +49,7 @@ const Home = () => {
         bgImg={<BgImage src={designImg} imgPositioning="15% 50%"/>}
       >
         <Typography variant="body1">
-          I've had experience working with various team settings both big and small. I've delivered projects at many different levels and have always adapted to changing technologies.
+          I've created prototypes, wireframes, user stories, and sitemaps working both independantly and collaborating with a team. I'm no stranger to designing intuitive and elegant solutions to all types of problems
         </Typography>
         <SkillTags labels={[
           'Figma','Sketch','Illustrator','InDesign','InVision',
@@ -62,7 +62,7 @@ const Home = () => {
           {number: '06', description: 'Coop Internships'},
           {number: '04', description: 'On-going Projects'},
           {number: '03', description: 'Years of Job Exp'},
-          {number: '23', description: 'Years Alive on Earth'},
+          {number: '2+', description: 'Coffees a Day'},
         ]}
       />
     </Grid>
