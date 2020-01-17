@@ -105,7 +105,7 @@ const App = () => {
   })
 
   return (
-    <Router basename="/test/">
+    <Router basename="/">
       <ScrollToTop />
       <Grid className={classes.loading} id="loading" container justify="center" alignItems="center" xs={12}>
         <FlagSpinner size={80} color={colors.text30} />
