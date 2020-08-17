@@ -18,7 +18,7 @@ import Projects from './views/Projects'
 import Experience from './views/Experience'
 import Contact from './views/Contact'
 //redux
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { BROWSERSIZE_UPDATE } from './redux/actionTypes'
 
 //site routing

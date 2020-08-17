@@ -25,21 +25,25 @@ const Contact = () => {
       <ContactContainer
         title="Email"
         description="christopherjiang@outlook.com"
+        url="mailto:christopherjiang@outlook.com"
         imgSrc={emailImg}
       />
       <ContactContainer
         title="LinkedIn"
         description="linkedin.com/in/christopherjiang"
+        url="http://linkedin.com/in/christopherjiang"
         imgSrc={linkedInImg}
-      />
+        />
       <ContactContainer
         title="GitHub"
         description="github.com/chrisisonline"
+        url="http://github.com/chrisisonline"
         imgSrc={gitHubImg}
-      />
+        />
       <ContactContainer
         title="Medium"
         description="medium.com/@cj.design"
+        url="http://medium.com/@cj.design"
         imgSrc={mediumImg}
       />
     </Grid>

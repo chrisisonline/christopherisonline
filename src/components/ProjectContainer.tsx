@@ -61,6 +61,10 @@ const useStyles = makeStyles(theme => ({
     color: (props: any) => props.color.secondary as any,
     marginTop: -theme.spacing(1),
   },
+  link: {
+    color: (props: any) => props.color.secondary as any,
+    paddingTop: 6,
+  }
 }))
 const imgStyles = (right? : boolean) => ({
   position: 'absolute',
@@ -79,6 +83,11 @@ const imgStylesMobile = {
   paddingTop: 0,
 }
 
+interface ILink {
+  text: string
+  url: string
+}
+
 const ProjectContainer = ({
   title,
   subTitle,
@@ -87,6 +96,7 @@ const ProjectContainer = ({
   img,
   color = {primary: colors.text, secondary: colors.textLight},
   right = false,
+  links,
 }:{
   title: string,
   subTitle: string,
@@ -95,6 +105,7 @@ const ProjectContainer = ({
   img: string,
   color?: IColor,
   right?: boolean,
+  links?: Array<ILink>,
 }) => {
   const props = {right, color}
   const classes = useStyles(props)
@@ -134,6 +145,17 @@ const ProjectContainer = ({
       <Typography variant="body1">
         { body }
       </Typography>
+      {
+        links ?
+        <Typography className={classes.link} variant="body1">{
+          links.map((link: ILink, index: number) => (
+              <a href={link.url} key={link.text + index}>
+                { (index !== 0 ? "\xa0\xa0|\xa0\xa0" : "") + link.text}
+              </a>
+          ))
+        }</Typography> :
+        null
+      }
       <SkillTags labels={labels} bgColor={color.primary} right={isMobile ? false : right}/>
     </Grid>
   )

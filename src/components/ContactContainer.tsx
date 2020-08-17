@@ -30,10 +30,12 @@ const useStyles = makeStyles(theme => ({
 const ContactContainer = ({
   title,
   description,
+  url,
   imgSrc,
 }:{
   title: string,
   description: string,
+  url?: string,
   imgSrc: string,
 }) => {
   const classes = useStyles()
@@ -61,8 +63,11 @@ const ContactContainer = ({
       <Typography className={classes.title} variant="h2">
         { title }
       </Typography>
-      <Typography className={classes.description} variant="subtitle1">
+      <Typography className={classes.description} variant="subtitle1">{
+        url ?
+        <a href={url}>{description}</a> :
         { description }
+      }
       </Typography>
     </Grid>
   )
