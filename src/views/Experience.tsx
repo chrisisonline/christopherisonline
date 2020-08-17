@@ -32,7 +32,18 @@ const Experience = () => {
 
   return (
     <Grid className={classes.root} container item direction="column"  xs={12} sm={8} md={7} lg={6} spacing={4}>
-      <YearContainer year="2019" customColors={customColors.blue}/>
+      <YearContainer year="2020" customColors={customColors.blue}/>
+      <ExpContainer
+        company="Ryerson University"
+        jobTitle="Web Developer & Designer"
+        description={`Redesigning the RU Studenlife website to improve the user experience and update the UI
+        Conducting interviews with both students and staff to understand user needs & new ideas
+        Learned how to use the Wordpress platform to push large design updates in to production`}
+        startDate="JUNE"
+        endDate="PRESENT"
+        customColors={customColors.blue}
+      />
+      <YearContainer year="2019" customColors={customColors.yellow}/>
       <ExpContainer
         company="SpankChain"
         jobTitle="Front-End Developer"
@@ -40,31 +51,31 @@ const Experience = () => {
         Coordinating with the design and engineering leads to create flexible components
         Created a style guide documentation using Storybook`}
         startDate="MAY"
-        endDate="NOW"
-        customColors={customColors.blue}
+        endDate="DEC"
+        customColors={customColors.yellow}
       />
       <ExpContainer
         company="LCBO Next"
-        jobTitle="UI &UX Developer"
+        jobTitle="UI & UX Developer"
         description={`Designed and developed mobile and responsive web applications using React and Sketch
         Used an Agile workflow to complete multiple prototypes and products
         Lead stand-ups, outlined project requirements, and scheduled deliverables`}
         startDate="JAN"
         endDate="APR"
-        customColors={customColors.blue}
+        customColors={customColors.yellow}
       />
-      <YearContainer year="2018" customColors={customColors.yellow}/>
+      <YearContainer year="2018" customColors={customColors.red}/>
       <ExpContainer
         company="Upverter"
-        jobTitle="UI&UX Developer"
+        jobTitle="UI & UX Developer"
         description={`Overhauled and documented changes for the Upverter UI
         Front-End updates using Google Closure, Sass, and Flask
         Tested and pushed changes into production`}
         startDate="MAY"
         endDate="AUG"
-        customColors={customColors.yellow}
+        customColors={customColors.red}
       />
-      <YearContainer year="2016" customColors={customColors.red}/>
+      <YearContainer year="2016" customColors={customColors.green}/>
       <ExpContainer
         company="American Express"
         jobTitle="Innovation Lab Jr Engineer"
@@ -73,9 +84,9 @@ const Experience = () => {
         Deploying front-end applications in to production with ePaas`}
         startDate="MAY"
         endDate="AUG"
-        customColors={customColors.red}
+        customColors={customColors.green}
       />
-      <YearContainer year="2015" customColors={customColors.green}/>
+      <YearContainer year="2015" customColors={customColors.blue}/>
       <ExpContainer
         company="OpenText"
         jobTitle="R&D Support Specialist"
@@ -83,7 +94,7 @@ const Experience = () => {
         Connecting multiple teams to solve problems via JIRA and Confluence`}
         startDate="SEP"
         endDate="DEC"
-        customColors={customColors.green}
+        customColors={customColors.blue}
       />
       <ExpContainer
         company="Manulife"
@@ -92,9 +103,9 @@ const Experience = () => {
         Assisting departments by upgrading to new infrastructure and equipment`}
         startDate="JAN"
         endDate="APR"
-        customColors={customColors.green}
+        customColors={customColors.blue}
       />
-      <YearContainer year="2014" customColors={customColors.blue}/>
+      <YearContainer year="2014" customColors={customColors.yellow}/>
       <ExpContainer
         company="Academy of Music"
         jobTitle="Piano Instructor"
@@ -102,7 +113,7 @@ const Experience = () => {
         Organizing and scheduling lesson plans for every student`}
         startDate="SEP/12"
         endDate="MAY/14"
-        customColors={customColors.blue}
+        customColors={customColors.yellow}
       />
       <ExpContainer
         company="City of Saskatoon"
@@ -112,7 +123,7 @@ const Experience = () => {
         Maintaining the facility, performing opening and closing duties, and ensuring the safety of patrons`}
         startDate="FEB/13"
         endDate="MAR/14"
-        customColors={customColors.blue}
+        customColors={customColors.yellow}
       />
     </Grid>
   )

@@ -59,9 +59,9 @@ const Home = () => {
       <StatContainer
         title="Chris's Overview"
         stats={[
-          {number: '06', description: 'Coop Internships'},
-          {number: '04', description: 'On-going Projects'},
-          {number: '03', description: 'Years of Job Exp'},
+          {number: '07', description: 'Coops & Internships'},
+          {number: '04', description: 'Personal Projects'},
+          {number: '03', description: 'Years of Work Exp'},
           {number: '2+', description: 'Coffees a Day'},
         ]}
       />
