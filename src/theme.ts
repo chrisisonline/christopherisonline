@@ -20,6 +20,8 @@ export const colors = {
   redLight: '#E38881',
   green: '#40734E',
   greenLight: '#6F9A7B',
+  pink: '#D65078',
+  pinkLight: '#D1829A',
 }
 export interface IColor {
   primary: string,
@@ -65,7 +67,7 @@ export const myTheme = createMuiTheme({
     body1: {
       color: colors.text,
       fontWeight: 400,
-      fontSize: '1.3em',
+      fontSize: '1.5em',
     },
     button: {
       fontFamily: Raleway,

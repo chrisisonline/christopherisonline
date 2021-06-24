@@ -5,6 +5,7 @@ import { Grid } from '@material-ui/core'
 import { colors, rootStyles } from '../theme'
 import ProjectContainer from '../components/ProjectContainer'
 //img assets
+import dessertsApp from '../imgs/dessertsapp.png'
 import pokemonImg from '../imgs/pokemon.png'
 import upverterImg from '../imgs/upverter.png'
 import websiteImg from '../imgs/website.png'
@@ -24,6 +25,18 @@ const Projects = () => {
   return (
     <Grid className={classes.root} container item xs={11} sm={9}>
       <ProjectContainer
+        title="Desserts App"
+        subTitle="Mobile ordering platform"
+        body="An app designed to empower local and small businesses by solving unique problems"
+        labels={['Figma','Gatsby.js','React','Material UI', 'Git', 'React Native']}
+        img={dessertsApp}
+        color={{primary: colors.pink, secondary: colors.pinkLight}}
+        links={[{
+          text: "Desserts App Homepage",
+          url: "https://desserts.app"
+        }]}
+      />
+      <ProjectContainer
         title="Pokémon"
         subTitle="Web App"
         body="An intuitive & modern design for a comprehensive & featured packed application"
@@ -37,6 +50,7 @@ const Projects = () => {
           text: "Read about my process",
           url: "https://medium.com/@cj.design/fresh-new-look-for-a-pokemon-calculator-b14ce7b567a1"
         }]}
+        right
       />
       <ProjectContainer
         title="Upverter"
@@ -49,7 +63,6 @@ const Projects = () => {
           text: "See all the mockups & designs",
           url: "https://medium.com/@cj.design/refreshing-upverter-4212df39bedf"
         }]}
-        right
       />
       <ProjectContainer
         title="EasyClipboard"
@@ -62,6 +75,7 @@ const Projects = () => {
           text: "Try it yourself in the Chrome store",
           url: "https://chrome.google.com/webstore/detail/easy-clipboard/lkpiolleljimgohflbgekkbeoiajighj"
         }]}
+        right
       />
       <ProjectContainer
         title="Portfolio"
@@ -70,7 +84,6 @@ const Projects = () => {
         labels={['React','React-router','Material UI','Node.js','Yarn','Git','Figma']}
         img={websiteImg}
         color={{primary: colors.green, secondary: colors.greenLight}}
-        right
       />
       <ProjectContainer
         title="Resume"
@@ -79,6 +92,7 @@ const Projects = () => {
         labels={['Illustrator','InDesign','Figma']}
         img={resumesImg}
         color={{primary: colors.blue, secondary: colors.blueLight}}
+        right
       />
     </Grid>
   )

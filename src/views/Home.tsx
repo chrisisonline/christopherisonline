@@ -26,7 +26,7 @@ const Home = () => {
         subTitle="In case you're in a hurry"
       >
         <Typography variant="body1">
-          I’m a self-taught <b>UI/UX Designer</b> & <b>Front-End Developer</b>. Curiosity has driven me become a jack-of-all trades with experience as a <b>Product Manager</b>, <b>IT Support</b>, <b>Music Instructor</b>, and <b>Lifeguard</b>.
+          I’m a <b>UI/UX Designer</b> & <b>Front-End Developer</b> with several years of experience working with companies of all types. Adaptability is my strong suit as I have also had experience as a <b>Product Manager</b>, <b>Project Lead</b>, and <b>Market Researcher</b>.
         </Typography>
       </TextContainer>
       <TextContainer
@@ -36,11 +36,10 @@ const Home = () => {
         bgImg={<BgImage src={laptopImg} right imgPositioning="5% 20%"/>}
       >
         <Typography variant="body1">
-          I've had experience working with various team settings both big and small. I've delivered projects at many different levels and have always adapted to changing technologies.
+          I've had experience working with various teams and projects   both big and small, and through it have learned to deliver projects at different levels to match their needs. Whether it's a MVP or a production ready feature, I quickly adapt to different environments and technologies
         </Typography>
         <SkillTags labels={[
-          'HTML5','CSS3','JavaScript','React','Redux','Node',
-          'MaterialUI','Gulp','Docker','Git',
+          'React','Gatsby','MaterialUI','Redux','TypeScript','Webpack','NodeJS','Git','HTML','CSS','JavaScript','Wordpress'
         ]} right/>
       </TextContainer>
       <TextContainer
@@ -49,17 +48,17 @@ const Home = () => {
         bgImg={<BgImage src={designImg} imgPositioning="15% 50%"/>}
       >
         <Typography variant="body1">
-          I've created prototypes, wireframes, user stories, and sitemaps working both independantly and collaborating with a team. I'm no stranger to designing intuitive and elegant solutions to all types of problems
+          I've created prototypes, wireframes, user stories, and sitemaps working both independently and collaborating with a team. I'm no stranger to designing intuitive and elegant solutions to all types of problems.
         </Typography>
         <SkillTags labels={[
-          'Figma','Sketch','Illustrator','InDesign','InVision',
+          'Figma','Sketch','Illustrator','Mockups','Wireframing','InDesign','InVision',
           'Photoshop','Adobe XD','MS Paint'
         ]}/>
       </TextContainer>
       <StatContainer
         title="Chris's Overview"
         stats={[
-          {number: '07', description: 'Coops & Internships'},
+          {number: '07', description: 'Co-ops & Internships'},
           {number: '04', description: 'Personal Projects'},
           {number: '03', description: 'Years of Work Exp'},
           {number: '2+', description: 'Coffees a Day'},
