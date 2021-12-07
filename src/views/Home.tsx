@@ -39,7 +39,7 @@ const Home = () => {
           I've had experience working with various teams and projects   both big and small, and through it have learned to deliver projects at different levels to match their needs. Whether it's a MVP or a production ready feature, I quickly adapt to different environments and technologies
         </Typography>
         <SkillTags labels={[
-          'React','Gatsby','MaterialUI','Redux','TypeScript','Webpack','NodeJS','Git','HTML','CSS','JavaScript','Wordpress'
+          'React','VueJS','Gatsby','MaterialUI','TailwindCSS','Redux','TypeScript','NodeJS','Git','HTML','CSS','JavaScript','Wordpress'
         ]} right/>
       </TextContainer>
       <TextContainer
@@ -52,7 +52,7 @@ const Home = () => {
         </Typography>
         <SkillTags labels={[
           'Figma','Sketch','Illustrator','Mockups','Wireframing','InDesign','InVision',
-          'Photoshop','Adobe XD','MS Paint'
+          'Photoshop','Adobe XD','MS Paint :)'
         ]}/>
       </TextContainer>
       <StatContainer

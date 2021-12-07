@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const SideBarMobile = ({ navLinks }:{ navLinks: Array<NavLink> }) => {
-  const [isOpen, setIsOpen] = useState()
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const classes = useStyles()
 
   const toggleDrawer = (open: boolean) => (
