@@ -35,7 +35,7 @@ const Experience = () => {
       <YearContainer year="2021" customColors={customColors.blue}/>
       <ExpContainer
         company="Desserts App"
-        jobTitle="Lead UI Designer"
+        jobTitle="Lead Product Designer"
         description={`Developing from scratch the UI & UX for a new food ordering platform
         Conducting market and user research to find specific solutions for bakeries & dessert shops
         Working with startup incubator DMZ to raise funds and develop business strategies`}
