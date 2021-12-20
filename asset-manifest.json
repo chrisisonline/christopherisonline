@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.990c16a7.chunk.css",
+    "main.js": "/portfolio/static/js/main.f413c89f.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.f413c89f.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.2601f1e9.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.2601f1e9.js.map",
+    "static/js/2.56a6d1ab.chunk.js": "/portfolio/static/js/2.56a6d1ab.chunk.js",
+    "static/js/2.56a6d1ab.chunk.js.map": "/portfolio/static/js/2.56a6d1ab.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "precache-manifest.62871fc2cb057c85ef91e3e8d374e6a1.js": "/portfolio/precache-manifest.62871fc2cb057c85ef91e3e8d374e6a1.js",
+    "service-worker.js": "/portfolio/service-worker.js",
+    "static/css/main.990c16a7.chunk.css.map": "/portfolio/static/css/main.990c16a7.chunk.css.map",
+    "static/media/cjlogo.png": "/portfolio/static/media/cjlogo.b8cc00be.png",
+    "static/media/design.png": "/portfolio/static/media/design.eb0409cd.png",
+    "static/media/dessertsapp.png": "/portfolio/static/media/dessertsapp.ba5fb79b.png",
+    "static/media/easyclipboard.png": "/portfolio/static/media/easyclipboard.ee6b38d5.png",
+    "static/media/laptop.png": "/portfolio/static/media/laptop.3a20ddbf.png",
+    "static/media/longboard.png": "/portfolio/static/media/longboard.44b333c7.png",
+    "static/media/pokemon.png": "/portfolio/static/media/pokemon.76603053.png",
+    "static/media/resumes.png": "/portfolio/static/media/resumes.419239e6.png",
+    "static/media/upverter.png": "/portfolio/static/media/upverter.c50f4b15.png",
+    "static/media/website.png": "/portfolio/static/media/website.15a9ac6f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2601f1e9.js",
+    "static/js/2.56a6d1ab.chunk.js",
+    "static/css/main.990c16a7.chunk.css",
+    "static/js/main.f413c89f.chunk.js"
+  ]
+}
