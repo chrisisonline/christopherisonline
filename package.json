@@ -2,7 +2,7 @@
   "name": "portfolio-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chrisisonline.github.io/christopherisonline/",
+  "homepage": "https://www.chrisjiang.me/",
   "dependencies": {
     "@material-ui/core": "^4.7.0",
     "@material-ui/icons": "^4.5.1",
@@ -39,7 +39,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "react-scripts build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
