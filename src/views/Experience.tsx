@@ -32,7 +32,18 @@ const Experience = () => {
 
   return (
     <Grid className={classes.root} container item direction="column"  xs={12} sm={8} md={7} lg={6} spacing={4}>
-      <YearContainer year="2021" customColors={customColors.blue}/>
+      <YearContainer year="2022" customColors={customColors.blue}/>
+      <ExpContainer
+        company="PhenoTips"
+        jobTitle="Front-end Developer"
+        description={`Front-end developer and UI/UX developer maintaining and developing new Phenotips projects
+        Building flexible micro-frontend apps for genomic & phenotyping, cancer risk analysis, pedigree creation and patient-facing products.
+        Creating prototypes and mockups of the next generation of the Phenotip products and revamping existing tools to better fit the needs of clinicians and healthcare staff`}
+        startDate="JAN"
+        endDate="PRESENT"
+        customColors={customColors.blue}
+      />
+      <YearContainer year="2021" customColors={customColors.yellow}/>
       <ExpContainer
         company="Desserts App"
         jobTitle="Lead Product Designer"
@@ -40,10 +51,10 @@ const Experience = () => {
         Conducting market and user research to find specific solutions for bakeries & dessert shops
         Working with startup incubator DMZ to raise funds and develop business strategies`}
         startDate="MAR"
-        endDate="PRESENT"
-        customColors={customColors.blue}
+        endDate="DEC"
+        customColors={customColors.yellow}
       />
-      <YearContainer year="2020" customColors={customColors.yellow}/>
+      <YearContainer year="2020" customColors={customColors.red}/>
       <ExpContainer
         company="Ryerson University"
         jobTitle="Web Developer & Designer"
@@ -52,9 +63,9 @@ const Experience = () => {
         Learned how to use the Wordpress platform to push large design updates in to production`}
         startDate="JUN"
         endDate="AUG"
-        customColors={customColors.yellow}
+        customColors={customColors.red}
       />
-      <YearContainer year="2019" customColors={customColors.red}/>
+      <YearContainer year="2019" customColors={customColors.green}/>
       <ExpContainer
         company="SpankChain"
         jobTitle="Front-End Developer"
@@ -63,7 +74,7 @@ const Experience = () => {
         Created a style guide documentation using Storybook`}
         startDate="MAY"
         endDate="DEC"
-        customColors={customColors.red}
+        customColors={customColors.green}
       />
       <ExpContainer
         company="LCBO Next"
@@ -73,9 +84,9 @@ const Experience = () => {
         Lead stand-ups, outlined project requirements, and scheduled deliverables`}
         startDate="JAN"
         endDate="APR"
-        customColors={customColors.red}
+        customColors={customColors.green}
       />
-      <YearContainer year="2018" customColors={customColors.green}/>
+      <YearContainer year="2018" customColors={customColors.blue}/>
       <ExpContainer
         company="Upverter"
         jobTitle="UI & UX Developer"
@@ -84,9 +95,9 @@ const Experience = () => {
         Tested and pushed changes into production`}
         startDate="MAY"
         endDate="AUG"
-        customColors={customColors.green}
+        customColors={customColors.blue}
       />
-      <YearContainer year="2016" customColors={customColors.blue}/>
+      <YearContainer year="2016" customColors={customColors.yellow}/>
       <ExpContainer
         company="American Express"
         jobTitle="Innovation Lab Jr Engineer"
@@ -95,9 +106,9 @@ const Experience = () => {
         Deploying front-end applications in to production with ePaas`}
         startDate="MAY"
         endDate="AUG"
-        customColors={customColors.blue}
+        customColors={customColors.yellow}
       />
-      <YearContainer year="2015" customColors={customColors.yellow}/>
+      <YearContainer year="2015" customColors={customColors.red}/>
       <ExpContainer
         company="OpenText"
         jobTitle="R&D Support Specialist"
@@ -105,7 +116,7 @@ const Experience = () => {
         Connecting multiple teams to solve problems via JIRA and Confluence`}
         startDate="SEP"
         endDate="DEC"
-        customColors={customColors.yellow}
+        customColors={customColors.red}
       />
       <ExpContainer
         company="Manulife"
@@ -114,9 +125,9 @@ const Experience = () => {
         Assisting departments by upgrading to new infrastructure and equipment`}
         startDate="JAN"
         endDate="APR"
-        customColors={customColors.yellow}
+        customColors={customColors.red}
       />
-      <YearContainer year="2014" customColors={customColors.red}/>
+      <YearContainer year="< 2014" customColors={customColors.green}/>
       <ExpContainer
         company="Academy of Music"
         jobTitle="Piano Instructor"
@@ -124,7 +135,7 @@ const Experience = () => {
         Organizing and scheduling lesson plans for every student`}
         startDate="SEP/12"
         endDate="MAY/14"
-        customColors={customColors.red}
+        customColors={customColors.green}
       />
       <ExpContainer
         company="City of Saskatoon"
@@ -134,7 +145,7 @@ const Experience = () => {
         Maintaining the facility, performing opening and closing duties, and ensuring the safety of patrons`}
         startDate="FEB/13"
         endDate="MAR/14"
-        customColors={customColors.red}
+        customColors={customColors.green}
       />
     </Grid>
   )

@@ -58,10 +58,10 @@ const Home = () => {
       <StatContainer
         title="Chris's Overview"
         stats={[
-          {number: '07', description: 'Co-ops & Internships'},
-          {number: '04', description: 'Personal Projects'},
-          {number: '03', description: 'Years of Work Exp'},
-          {number: '2+', description: 'Coffees a Day'},
+          {number: '09', description: 'Technical Roles'},
+          {number: '07', description: 'Personal Projects'},
+          {number: '04', description: 'Years of Experience'},
+          {number: '03', description: 'Coffees a Day'},
         ]}
       />
     </Grid>
