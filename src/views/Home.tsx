@@ -60,7 +60,7 @@ const Home = () => {
         stats={[
           {number: '09', description: 'Technical Roles'},
           {number: '07', description: 'Personal Projects'},
-          {number: '04', description: 'Years of Experience'},
+          {number: '07', description: 'Years of Experience'},
           {number: '03', description: 'Coffees a Day'},
         ]}
       />
